@@ -38,6 +38,8 @@ body {
     font-family: "Josefin Sans", sans-serif;
     font-size: 16px;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;    
 }
 
 #wrapper {
@@ -45,12 +47,11 @@ body {
     background-size: cover;
     display: flex;
     flex-direction: column;
-    max-width: 1440px;
-    height: 100vh;
+    min-height: 800px; 
+    width: 100%;
+    max-width: 1440px;      
 }
 
-header {
-}
 
 #brand {
     display: flex;
@@ -61,13 +62,17 @@ header {
 }
 
 #brand img {
-    height: 25px;
+    height: 22px;
 }
 
-.hero {
+.hero-mobile {
     height: 250px;
     background: url(/images/hero-mobile.jpg) no-repeat center top;
     background-size: cover;
+}
+
+.hero-desktop {
+    display: none;    
 }
 
 main {
@@ -95,7 +100,7 @@ h2.title span.em {
 p {
     padding: 0 35px 30px 35px;
     text-align: center;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 20px;
     color: var(--red-desaturated);
 }
@@ -143,6 +148,7 @@ p {
     border: 0;
     background: none;
     outline: none;
+    font-family: "Josefin Sans", sans-serif;
     font-size: 14px;
 }
 
@@ -153,6 +159,7 @@ p {
 
 .attribution {
     margin-top: 80px;
+    padding: 30px 0;
     font-size: 12px;
     text-align: center;
 }
@@ -163,4 +170,70 @@ p {
 }
 .attribution a:hover {
     color: #63687e;
+}
+
+.container {
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+@media only screen and (min-width: 768px) {
+    .container {
+        width: 58%;
+        padding: 0 13%;
+    }
+
+    #brand {
+        padding-left:0;
+        height: 32px;
+        margin-top: 65px;
+    }
+
+    #brand img {
+        height: 30px;        
+    }
+    
+    #wrapper {
+        flex-direction: row;        
+    }
+
+    h2.title {
+        margin-top:140px;
+        margin-bottom: 10px;  
+        font-size: 65px;
+        text-align: left;
+        line-height: 70px;
+    }
+   
+    main {
+        align-items: flex-start;
+    }
+
+    p {
+        text-align: left;
+        padding-left: 0;
+        padding-top: 0;
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    .hero-mobile {        
+        display: none;
+    }
+    .hero-desktop {
+        display: flex;
+        width: 42%;
+        min-height: 100%;
+        margin: 0 auto;
+        background: url(/images/hero-desktop.jpg) no-repeat;
+        background-size: cover;
+    }
+}
+
+
+@media only screen and (min-width: 1440px) {
+    body {
+        align-items: center;
+        justify-content: center;
+    }
 }
